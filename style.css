@@ -25,6 +25,7 @@ h1, h2, h3 {
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://upload.wikimedia.org/wikipedia/commons/e/e6/Lermontov_caucasus.jpg') no-repeat center center/cover;
     height: 60vh;
+    min-height: 300px;
     color: white;
     display: flex;
     justify-content: center;
@@ -65,20 +66,80 @@ h1, h2, h3 {
     padding: 0;
     margin: 0;
     display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens if needed */
+    justify-content: center;
 }
 
-.main-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 1rem 1.5rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* --- НОВЫЕ СТИЛИ ДЛЯ КНОПОК --- */
+/* From Uiverse.io by KlaujonRuamni */
+.beautiful-button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+  /* Gradient background */
+  color: white;
+  /* White text color */
+  font-family: "Segoe UI", sans-serif;
+  /* Stylish and legible font */
+  font-weight: bold;
+  font-size: 18px;
+  /* Large font size */
+  border: none;
+  /* No border */
+  border-radius: 30px;
+  /* Rounded corners */
+  padding: 14px 28px;
+  /* Large padding */
+  cursor: pointer;
+  /* Cursor on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow */
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+  /* Smooth transition */
 }
 
-.main-nav a:hover, .main-nav a.active {
-    background-color: #34495e;
-    color: #f1c40f;
+/* Hover animation */
+.beautiful-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
 }
+
+/* Click animation */
+.beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer animation */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Particle animation */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Active state for navigation button */
+.beautiful-button.active {
+    box-shadow: 0 0 15px 5px rgba(100, 105, 180, 0.7);
+    transform: scale(1.05) translateY(-2px);
+}
+/* --- КОНЕЦ НОВЫХ СТИЛЕЙ --- */
+
 
 /* Секции контента */
 .content-section {
@@ -214,6 +275,7 @@ h1, h2, h3 {
     border-radius: 4px;
     background-color: #333;
     color: #f4f4f4;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
 /* Timeline для биографии */
@@ -236,6 +298,7 @@ h1, h2, h3 {
     padding: 10px 40px;
     position: relative;
     width: 50%;
+    box-sizing: border-box;
 }
 .timeline-item:nth-child(odd) { left: 0; }
 .timeline-item:nth-child(even) { left: 50%; }
@@ -308,9 +371,29 @@ footer {
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
     .hero p { font-size: 1.2rem; }
+    
+    .main-nav ul {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+    .beautiful-button {
+        width: 100%; /* Make buttons full-width */
+    }
+
     .gallery { grid-template-columns: 1fr; }
+
     .timeline::after { left: 31px; }
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
     .timeline-item::after { left: 15px; }
     .timeline-item:nth-child(even) { left: 0%; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .content-section h2 { font-size: 2.1rem; }
+    .modal-content {
+        margin: 25% auto;
+        width: 90%;
+    }
 }
