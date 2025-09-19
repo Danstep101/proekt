@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Творчество Михаила Лермонтова: произведения, биография, обложки книг и цитаты.">
+    <title>Творчество Михаила Лермонтова</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Михаил Юрьевич Лермонтов</h1>
+            <p>Великий русский поэт, прозаик, драматург</p>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#biography">Биография</a></li>
+            <li><a href="#works">Произведения</a></li>
+            <li><a href="#quotes">Цитаты</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="biography" class="content-section">
+            <h2>Биография</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <i class="fas fa-birthday-cake"></i>
+                    <p>1814: Рождение в Москве 3 (15) октября.</p>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>1828–1830: Учёба в Московском университетском благородном пансионе, создание первых поэм и лирики.</p>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-university"></i>
+                    <p>1830–1832: Обучение в Московском университете, которое оставляет из-за конфликтов.</p>
+                </div>
+                 <div class="timeline-item">
+                    <i class="fas fa-chess-knight"></i>
+                    <p>1832-1834: Поступление в Школу гвардейских подпрапорщиков и кавалерийских юнкеров в Петербурге.</p>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-feather-alt"></i>
+                    <p>1837: Написание стихотворения "Смерть поэта" в память о Пушкине, которое приносит ему славу и первую ссылку на Кавказ.</p>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-book-open"></i>
+                    <p>1838-1840: Период расцвета творчества. Написаны "Мцыри", "Демон", и опубликован роман "Герой нашего времени".</p>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-mountain"></i>
+                    <p>1840: Вторая ссылка на Кавказ за дуэль с сыном французского посла.</p>
+                </div>
+                <div class="timeline-item">
+                    <i class="fas fa-cross"></i>
+                    <p>1841: Трагическая гибель на дуэли с Николаем Мартыновым в Пятигорске 27 июля.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="content-section">
+            <h2>Произведения</h2>
+            <input type="text" id="search-input" placeholder="Поиск по произведениям...">
+            <div class="gallery">
+                <div class="card" id="hero-of-our-time">
+                    <div class="card-content">
+                        <h3>Герой нашего времени</h3>
+                        <p>Роман о Печорине, отражающий романтизм и критику общества.</p>
+                    </div>
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3>Отрывок</h3>
+                            <p>"Да, такова была моя участь с самого детства. Все читали на моем лице признаки дурных чувств, которых не было; но их предполагали — и они родились. Я был скромен — меня обвиняли в лукавстве: я стал скрытен."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="demon">
+                    <div class="card-content">
+                        <h3>Демон</h3>
+                        <p>Поэма о падшем ангеле и любви.</p>
+                    </div>
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3>Отрывок</h3>
+                            <p>"Печальный Демон, дух изгнанья, Летал над грешною землей, И лучших дней воспоминанья Пред ним теснилися толпой..."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="mtsyri">
+                    <div class="card-content">
+                        <h3>Мцыри</h3>
+                        <p>Поэма о беглеце-монахе на Кавказе.</p>
+                    </div>
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3>Отрывок</h3>
+                            <p>"Немного лет тому назад, Там, где, сливаяся, шумят, Обнявшись, будто две сестры, Струи Арагвы и Куры, Был монастырь..."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="borodino">
+                    <div class="card-content">
+                        <h3>Бородино</h3>
+                        <p>Стихотворение о Бородинской битве.</p>
+                    </div>
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3>Отрывок</h3>
+                            <p>"— Скажи-ка, дядя, ведь не даром Москва, спаленная пожаром, Французу отдана? Ведь были ж схватки боевые, Да, говорят, еще какие! Недаром помнит вся Россия Про день Бородина!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="masquerade">
+                    <div class="card-content">
+                        <h3>Маскарад</h3>
+                        <p>Драма о ревности и нравах светского общества.</p>
+                    </div>
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h3>Отрывок</h3>
+                            <p>"Всё это было бы смешно, Когда бы не было так грустно."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quotes" class="content-section">
+            <h2>Цитаты</h2>
+            <div class="quote">И скучно и грустно, и некому руку подать<br>В минуту душевной невзгоды...</div>
+            <div class="quote">Выхожу один я на дорогу;<br>Сквозь туман кремнистый путь блестит...</div>
+            <div class="quote">Люблю отчизну я, но странною любовью!<br>Не победит ее рассудок мой.</div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Творчество Лермонтова</p>
+        <p>Сделано Степановым Данилом для проекта 9 класса</p>
+    </footer>
+
+    <button id="scrollToTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>
