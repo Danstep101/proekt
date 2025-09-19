@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const sections = document.querySelectorAll('.content-section');
-    const navLinks = document.querySelectorAll('.main-nav a');
+    // Updated selector to target the new buttons
+    const navLinks = document.querySelectorAll('.main-nav .nav-btn');
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
     const navHeight = document.querySelector('.main-nav').offsetHeight;
     const cards = document.querySelectorAll('.card');
@@ -38,7 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const id = entry.target.id;
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.href.includes(id)) {
+                    // Updated condition to use data-target attribute
+                    if (link.dataset.target.includes(id)) {
                         link.classList.add('active');
                     }
                 });
@@ -50,11 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Плавный скролл при клике на ссылки
+    // Плавный скролл при клике на кнопки
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
+            // Updated to get target ID from data-target attribute
+            const targetId = this.getAttribute('data-target').substring(1);
             const targetSection = document.getElementById(targetId);
             window.scrollTo({
                 top: targetSection.offsetTop - navHeight,
