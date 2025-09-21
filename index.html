@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Творчество и анализ произведений Михаила Лермонтова.">
+    <title>Творчество Михаила Лермонтова</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Михаил Юрьевич Лермонтов</h1>
+            <p>Великий русский поэт, прозаик, драматург</p>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><button class="beautiful-button nav-btn" data-target="#biography">Биография</button></li>
+            <li><button class="beautiful-button nav-btn" data-target="#works">Произведения</button></li>
+            <li><button class="beautiful-button nav-btn" data-target="#quotes">Цитаты</button></li>
+            <li><button class="beautiful-button nav-btn" data-target="#mtsyri-analysis">Анализ "Мцыри"</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="biography" class="content-section">
+            <h2>Биография</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-birthday-cake"></i></div>
+                    <div class="timeline-content">
+                        <h3>1814</h3>
+                        <p>Рождение в Москве 3 (15) октября.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h3>1828–1830</h3>
+                        <p>Учёба в Московском университетском благородном пансионе.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                    <div class="timeline-content">
+                        <h3>1830–1832</h3>
+                        <p>Обучение в Московском университете.</p>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-chess-knight"></i></div>
+                    <div class="timeline-content">
+                        <h3>1832-1834</h3>
+                        <p>Поступление в Школу гвардейских подпрапорщиков.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-feather-alt"></i></div>
+                    <div class="timeline-content">
+                        <h3>1837</h3>
+                        <p>Стихотворение "Смерть поэта", первая ссылка на Кавказ.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="timeline-content">
+                        <h3>1838-1840</h3>
+                        <p>Расцвет творчества: "Мцыри", "Демон", "Герой нашего времени".</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-mountain"></i></div>
+                    <div class="timeline-content">
+                        <h3>1840</h3>
+                        <p>Вторая ссылка на Кавказ за дуэль.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-cross"></i></div>
+                    <div class="timeline-content">
+                        <h3>1841</h3>
+                        <p>Трагическая гибель на дуэли в Пятигорске.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="works" class="content-section">
+            <h2>Произведения</h2>
+            <input type="text" id="search-input" placeholder="Поиск по произведениям...">
+            <div class="gallery">
+                <div class="card" id="hero-of-our-time">
+                    <div class="card-content">
+                        <h3>Герой нашего времени</h3>
+                        <p>Роман о Печорине, отражающий романтизм и критику общества.</p>
+                    </div>
+                </div>
+                <div class="card" id="demon">
+                    <div class="card-content">
+                        <h3>Демон</h3>
+                        <p>Поэма о падшем ангеле и любви.</p>
+                    </div>
+                </div>
+                <div class="card" id="mtsyri">
+                    <div class="card-content">
+                        <h3>Мцыри</h3>
+                        <p>Поэма о беглеце-монахе на Кавказе.</p>
+                    </div>
+                </div>
+                <div class="card" id="borodino">
+                    <div class="card-content">
+                        <h3>Бородино</h3>
+                        <p>Стихотворение о Бородинской битве.</p>
+                    </div>
+                </div>
+                <div class="card" id="masquerade">
+                    <div class="card-content">
+                        <h3>Маскарад</h3>
+                        <p>Драма о ревности и нравах светского общества.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="quotes" class="content-section">
+            <h2>Цитаты</h2>
+            <div class="quote">
+                <p>И скучно и грустно, и некому руку подать<br>В минуту душевной невзгоды...</p>
+                <footer>- Из стихотворения "И скучно и грустно"</footer>
+            </div>
+            <div class="quote">
+                <p>Выхожу один я на дорогу;<br>Сквозь туман кремнистый путь блестит...</p>
+                <footer>- Из стихотворения "Выхожу один я на дорогу"</footer>
+            </div>
+            <div class="quote">
+                <p>Люблю отчизну я, но странною любовью!<br>Не победит ее рассудок мой.</p>
+                <footer>- Из стихотворения "Родина"</footer>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="mtsyri-analysis" class="content-section">
+            <h2>Анализ поэмы "Мцыри"</h2>
+            <div id="presentation-launch-pad">
+                <div class="start-presentation-screen">
+                    <div class="relative group">
+                        <button id="start-pres-btn" class="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                            <span class="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+                            <span class="relative z-10 block px-6 py-3 rounded-xl bg-gray-950">
+                                <div class="relative z-10 flex items-center space-x-2">
+                                    <span class="transition-all duration-500 group-hover:translate-x-1">Начать презентацию</span>
+                                    <svg class="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1" data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" fill-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="presentation-layout-container">
+                    <div class="pres-nav-btn prev btn-conteiner">
+                        <a href="#" class="btn-content">
+                            <svg class="icon-arrow" width="41" height="29" viewBox="0 0 41 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="arrow-icon-one" d="M2.39999 14.5H12.4" stroke="#9ee5fa" stroke-width="4" stroke-linecap="round"></path>
+                                <path id="arrow-icon-two" d="M10.4 2L2.39999 14.5L10.4 27" stroke="#9ee5fa" stroke-width="4" stroke-linecap="round"></path>
+                                <path id="arrow-icon-three" d="M20.4 14.5H40.4" stroke="#9ee5fa" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="info-drum">
+                        <div class="drum-item" style="--i:0;"><i class="fas fa-bible"></i></div>
+                        <div class="drum-item" style="--i:1;"><i class="fas fa-mountain"></i></div>
+                        <div class="drum-item" style="--i:2;"><i class="fas fa-feather-alt"></i></div>
+                        <div class="drum-item" style="--i:3;"><i class="fas fa-book-open"></i></div>
+                        <div class="drum-item" style="--i:4;"><i class="fas fa-cross"></i></div>
+                        <div class="drum-item" style="--i:5;"><i class="fas fa-question"></i></div>
+                    </div>
+
+                    <div class="presentation-container">
+                        <button id="fullscreen-btn" title="Полноэкранный режим">
+                            <i class="fas fa-expand icon-expand"></i>
+                            <i class="fas fa-compress icon-compress"></i>
+                        </button>
+
+                        <div id="fullscreen-hint" class="fullscreen-hint">
+                            <p>Нажмите сюда для лучшего просмотра!</p>
+                            <button id="close-hint-btn" class="close-hint-btn">&times;</button>
+                        </div>
+
+                        <div class="presentation-background"></div>
+
+                        <div class="slide active" data-slide="1">
+                            <div class="slide-content title-slide">
+                                <h2 class="pres-title">«Заимствования в поэме М.Ю. Лермонтова „Мцыри“»</h2>
+                                <div class="pres-authors">
+                                    <p><strong>Авторы проекта:</strong> Степанов Данил Андреевич, Дягилев Тимофей Владимирович, Потапов Иван Федорович, Громов Ярослав Владиславович, ученики 9 «Г» класса</p>
+                                    <p><strong>Руководитель проекта:</strong> Анастасия Александровна, учитель русского языка и литературы</p>
+                                </div>
+                                <div class="pres-footer">
+                                    <p>г. Киселёвск, 2025 учебный год</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="2">
+                            <div class="slide-content intro-slide">
+                                <h3 class="slide-title">Введение</h3>
+                                <div class="intro-grid">
+                                    <div class="intro-box"><strong>Актуальность:</strong> Глубокий анализ заимствований в поэме «Мцыри» позволяет понять, как М.Ю. Лермонтов, опираясь на мировую культурную традицию, создавал уникальный художественный мир и неповторимый образ главного героя.</div>
+                                    <div class="intro-box"><strong>Проблема:</strong> Школьники часто воспринимают заимствования лишь как отдельные элементы и не понимают, как они синтезируются в единое целое.</div>
+                                    <div class="intro-box"><strong>Цель:</strong> Исследовать и проанализировать заимствования в поэме «Мцыри», определить их роль в создании художественного образа.</div>
+                                    <div class="intro-box"><strong>Гипотеза:</strong> М.Ю. Лермонтов не просто копировал известные сюжеты и образы, а творчески переосмыслял их, создавая новаторское произведение.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="3">
+                            <div class="slide-content text-slide">
+                                <h3 class="slide-title">Теоретический анализ. Три мира поэмы «Мцыри»</h3>
+                                <p>Лермонтов активно использовал мотивы и образы из трёх ключевых источников: <strong>Библии, кавказского фольклора</strong> и традиций <strong>европейского и русского романтизма.</strong></p>
+                                <p class="highlight">Поэт творчески перерабатывал «чужой» материал, наполняя его новым, глубоко личным и оригинальным содержанием.</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="4">
+                            <div class="slide-content quote-slide">
+                                <i class="fas fa-bible slide-icon"></i>
+                                <h3 class="slide-title">Мир Библии</h3>
+                                <p>Центральный сюжет — <strong>притча о блудном сыне</strong>, которую Лермонтов «перевернул»: Мцыри бежит из «тюрьмы» на родину, в свой потерянный «рай». Образ родины для Мцыри — это «земля обетованная».</p>
+                                <q>"Я знал одной лишь думы власть, / Одну — но пламенную страсть: / Она, как червь, во мне жила, / Изгрызла душу и сожгла..."</q>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="5">
+                            <div class="slide-content quote-slide">
+                                <i class="fas fa-mountain slide-icon"></i>
+                                <h3 class="slide-title">Мир Кавказа</h3>
+                                <p><strong>Образ героя-горца:</strong> Мцыри воплощает романтический идеал, для которого воля дороже жизни. <strong>Сцена боя с барсом</strong> имеет параллели в грузинском эпосе «Витязь в тигровой шкуре».</p>
+                                <q>"И я был страшен в этот миг; / Как барс пустынный, зол и дик, / Я пламенел, визжал, как он; / Как будто сам я был рожден / В семействе барсов и волков..."</q>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="6">
+                            <div class="slide-content quote-slide">
+                                <i class="fas fa-feather-alt slide-icon"></i>
+                                <h3 class="slide-title">Мир Романтизма</h3>
+                                <p>Мцыри — <strong>классический романтический герой</strong>, противопоставленный обществу. Поэма написана в форме <strong>исповеди</strong>, а пейзаж служит <strong>зеркалом души</strong> героя.</p>
+                                <q>"Я видел горные хребты, / Причудливые, как мечты... / ...Я променял бы, если б мог, / И рай и вечность..."</q>
+                            </div>
+                        </div>
+
+                        <div class="slide table-slide" data-slide="7">
+                            <div class="slide-content">
+                                <h3 class="slide-title">Практическая часть: Сравнительный анализ</h3>
+                                <p class="subtitle">Сравнение поэм «Мцыри» М.Ю. Лермонтова и «Кавказский пленник» А.С. Пушкина.</p>
+                                <img src="https://i.ibb.co/TxZYFjL8/photo-2025-09-20-12-54-45.jpg" alt="Сравнительная таблица поэм Мцыри и Кавказский пленник">
+                                <p class="conclusion"><strong>Вывод:</strong> Лермонтов смещает акцент с социального на экзистенциальный конфликт — на борьбу человека за свое предназначение.</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="8">
+                            <div class="slide-content product-slide">
+                                <h3 class="slide-title">Практическая часть: Продукт проекта</h3>
+                                <div class="product-content">
+                                    <div class="product-text">
+                                        <p>В качестве итогового продукта мы разработали <strong>буклет-памятку «Три мира поэмы „Мцыри“»</strong>.</p>
+                                        <p><strong>Цель продукта:</strong> Помочь учащимся 8-9 классов лучше понять глубину и многослойность поэмы.</p>
+                                        <p>Буклет обобщает материал в доступной форме и может быть использован на уроках литературы.</p>
+                                    </div>
+                                    <div class="product-icon">
+                                        <i class="fas fa-book-open"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="9">
+                            <div class="slide-content text-slide">
+                                <h3 class="slide-title">Заключение</h3>
+                                <p><strong>Вывод по гипотезе:</strong> Наша гипотеза <strong>полностью подтвердилась</strong>. Лермонтов действительно творчески переосмыслял заимствования, создавая новаторское произведение.</p>
+                                <p class="highlight"><strong>Главный результат:</strong> Заимствованные элементы стали строительным материалом для выражения главной идеи поэмы — трагического величия человека в его вечном стремлении к свободе.</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="10">
+                            <div class="slide-content text-slide">
+                                <h3 class="slide-title">Список использованных источников</h3>
+                                <p>Здесь необходимо перечислить все источники, которые были использованы для сбора, анализа и синтеза информации в теоретической части индивидуального проекта.</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="11">
+                            <div class="slide-content text-slide">
+                                <h3 class="slide-title">Спасибо за внимание!</h3>
+                                <p>Готовы ответить на ваши вопросы.</p>
+                                <i class="fas fa-question-circle slide-icon-large"></i>
+                            </div>
+                        </div>
+                        <div class="slide-counter"></div>
+                    </div>
+
+                    <div class="pres-nav-btn next btn-conteiner">
+                        <a href="#" class="btn-content">
+                            <span class="btn-title"></span>
+                            <span class="icon-arrow">
+                                <svg width="41" height="29" viewBox="0 0 41 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path id="arrow-icon-one" d="M38.6 14.5H28.6" stroke="#9ee5fa" stroke-width="4" stroke-linecap="round"></path>
+                                    <path id="arrow-icon-two" d="M30.6 27L38.6 14.5L30.6 2" stroke="#9ee5fa" stroke-width="4" stroke-linecap="round"></path>
+                                    <path id="arrow-icon-three" d="M20.6 14.5H0.599998" stroke="#9ee5fa" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Творчество Лермонтова</p>
+        <p>Сделано Степановым Данилом для проекта 9 класса</p>
+    </footer>
+
+    <button id="scrollToTopBtn" class="button">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+            <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
