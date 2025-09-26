@@ -633,6 +633,19 @@ hr {
     padding-bottom: 15px; /* Немного отступа снизу для скроллбара */
 }
 
+/* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */
+.table-slide .subtitle,
+.table-slide .conclusion {
+    font-size: clamp(1.2rem, 1rem + 1vw, 2rem); /* Такой же размер, как у .text-slide p */
+    line-height: 1.6;
+}
+
+.table-slide .conclusion {
+    margin-top: 20px;
+}
+/* --- КОНЕЦ ИЗМЕНЕНИЯ --- */
+
+
 .table-slide table {
     width: 100%; /* Таблица занимает всю доступную ширину родителя */
     border-collapse: collapse;
@@ -660,7 +673,6 @@ hr {
 }
 
 .table-slide img { max-height: 65%; object-fit: contain; }
-.table-slide .conclusion { font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.3rem); margin-top: 20px; }
 .slide-icon-large { font-size: 6rem; margin-top: 20px; color: rgba(255, 255, 255, 0.5); }
 .product-icon { font-size: 8rem; margin-bottom: 20px; color: rgba(255, 255, 255, 0.8); }
 .product-content { display: flex; align-items: center; gap: 40px; }
@@ -718,9 +730,6 @@ hr {
 .pres-nav-btn i {
     line-height: 1; /* Чтобы иконка центрировалась вертикально */
 }
-
-/* ИЗМЕНЕНИЕ ЗДЕСЬ: удалил ненужный класс */
-
 
 .slide-counter {
     position: absolute;
