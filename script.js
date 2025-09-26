@@ -12,17 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
         navHeight = nav.offsetHeight;
     });
 
-    let ticking = false;
-    function updateParallax() {
-        hero.style.backgroundPositionY = `${window.scrollY * 0.4}px`;
-        ticking = false;
-    }
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    });
+    /* --- ЭФФЕКТ ПАРАЛЛАКСА ОТКЛЮЧЕН --- */
+    // let ticking = false;
+    // function updateParallax() {
+    //     hero.style.backgroundPositionY = `${window.scrollY * 0.4}px`;
+    //     ticking = false;
+    // }
+    // window.addEventListener('scroll', () => {
+    //     if (!ticking) {
+    //         window.requestAnimationFrame(updateParallax);
+    //         ticking = true;
+    //     }
+    // });
+    /* ------------------------------------ */
+
 
     const observerOptions = {
         root: null,
