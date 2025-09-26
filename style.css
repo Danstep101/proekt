@@ -48,7 +48,7 @@ hr {
 
 /* Стили для "геройского" блока */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://upload.wikimedia.org/wikipedia/commons/e/e6/Lermontov_caucasus.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://tatarstan.ru/file/news/1302_n1625194_big.jpg') no-repeat center center/cover;
     height: 60vh;
     min-height: 400px;
     color: white;
