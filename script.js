@@ -5,27 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
     const nav = document.querySelector('.main-nav');
     let navHeight = nav.offsetHeight;
-    const searchInput = document.getElementById('search-input');
-    const hero = document.querySelector('.hero');
 
     window.addEventListener('resize', () => {
         navHeight = nav.offsetHeight;
     });
-
-    /* --- ЭФФЕКТ ПАРАЛЛАКСА ОТКЛЮЧЕН --- */
-    // let ticking = false;
-    // function updateParallax() {
-    //     hero.style.backgroundPositionY = `${window.scrollY * 0.4}px`;
-    //     ticking = false;
-    // }
-    // window.addEventListener('scroll', () => {
-    //     if (!ticking) {
-    //         window.requestAnimationFrame(updateParallax);
-    //         ticking = true;
-    //     }
-    // });
-    /* ------------------------------------ */
-
 
     const observerOptions = {
         root: null,
@@ -74,25 +57,35 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    if (searchInput) {
-        const cards = document.querySelectorAll('#works .card');
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            cards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const cardParent = card;
-                cardParent.style.display = title.includes(query) ? 'flex' : 'none';
-            });
+    // === КОД ДЛЯ ГОРИЗОНТАЛЬНОЙ ГАЛЕРЕИ ПРОИЗВЕДЕНИЙ (БЕЗ КНОПОК) ===
+    const gallery = document.querySelector('.gallery');
+    if (gallery) {
+        const originalItems = Array.from(gallery.children);
+        originalItems.forEach(item => {
+            const clone = item.cloneNode(true);
+            gallery.appendChild(clone);
         });
     }
 
+    // === КОД ДЛЯ ВЕРТИКАЛЬНОЙ АНИМАЦИИ ЦИТАТ ===
+    const quoteColumns = document.querySelectorAll('.quote-column');
+    quoteColumns.forEach(column => {
+        const originalQuotes = Array.from(column.children);
+        originalQuotes.forEach(item => {
+            const clone = item.cloneNode(true);
+            column.appendChild(clone);
+        });
+    });
+
+
+    // === КОД ДЛЯ ПРЕЗЕНТАЦИИ (остается без изменений) ===
     const presentationLaunchPad = document.getElementById('presentation-launch-pad');
     if (presentationLaunchPad) {
         const startPresBtn = document.getElementById('start-pres-btn');
         const presentationLayout = presentationLaunchPad.querySelector('.presentation-layout-container');
         const presentation = presentationLaunchPad.querySelector('.presentation-container');
+        const slideAnnouncer = document.getElementById('slide-announcer');
 
-        // ИЗМЕНЕНИЕ ЗДЕСЬ: Получаем элементы подсказки
         const fullscreenBtn = document.getElementById('fullscreen-btn');
         const fullscreenHint = document.getElementById('fullscreen-hint');
         const closeHintBtn = document.getElementById('close-hint-btn');
@@ -102,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
         startPresBtn.addEventListener('click', () => {
             presentationLaunchPad.classList.add('started');
 
-            // ИЗМЕНЕНИЕ ЗДЕСЬ: Логика работы подсказки
             if (fullscreenHint && closeHintBtn) {
                 hintAppearanceTimeout = setTimeout(() => {
                     fullscreenHint.classList.add('visible');
@@ -158,6 +150,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     prevSlide.classList.remove('active', outClass);
                     nextSlide.classList.remove(inClass);
+
+                    // Accessibility improvements
+                    nextSlide.focus();
+                    const slideTitle = nextSlide.querySelector('.slide-title, .pres-title');
+                    if (slideAnnouncer && slideTitle) {
+                        slideAnnouncer.textContent = `Слайд ${currentSlide + 1}: ${slideTitle.textContent}`;
+                    }
+
                     isAnimating = false;
                 }, animationDuration);
             } else {
