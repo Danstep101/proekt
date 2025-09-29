@@ -46,13 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // === MODIFIED FOR SMOOTHER ANIMATION ===
     window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
-            scrollToTopBtn.style.display = "flex";
+            scrollToTopBtn.classList.add("visible");
         } else {
-            scrollToTopBtn.style.display = "none";
+            scrollToTopBtn.classList.remove("visible");
         }
     });
+    // =======================================
+
     scrollToTopBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
