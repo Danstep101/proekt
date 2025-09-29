@@ -24,6 +24,7 @@ body {
     line-height: 1.7;
     transition: background-color 0.3s, color 0.3s;
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+    animation: pageFadeIn 1s ease-out; /* NEW: Page load animation */
 }
 
 .container {
@@ -43,6 +44,13 @@ hr {
     height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--primary-color), rgba(0, 0, 0, 0));
     margin: 60px 0;
+    transform: scaleX(0); /* NEW: Initial state for animation */
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1); /* NEW: Smooth transition */
+}
+
+/* NEW: Animate hr when section is visible */
+.content-section.visible hr {
+    transform: scaleX(1);
 }
 
 /* Скрытый класс для элементов доступности */
@@ -70,10 +78,10 @@ hr {
     text-align: center;
     background-attachment: fixed;
     position: relative;
+    overflow: hidden; /* NEW */
 }
 
 .hero-text {
-    animation: fadeInDown 1.5s ease-out;
     text-shadow: 0 2px 4px rgba(0,0,0,0.7);
 }
 
@@ -81,10 +89,15 @@ hr {
     font-size: clamp(2.5rem, 1.5rem + 5vw, 4.2rem);
     margin: 0;
     color: white;
+    animation: textReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards; /* NEW: Title animation */
+    transform: translateY(100%); /* NEW */
+    opacity: 0; /* NEW */
 }
 
 .hero p {
     font-size: clamp(1.2rem, 1rem + 1vw, 1.7rem);
+    animation: fadeInDown 1.5s ease-out 1s forwards; /* Modified: added delay and forwards */
+    opacity: 0; /* NEW */
 }
 
 /* Навигация */
@@ -114,6 +127,18 @@ hr {
     padding: 0 10px;
     box-sizing: border-box;
 }
+
+/* NEW: Staggered animation for nav buttons */
+.main-nav li {
+    animation: slideInFromTop 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+.main-nav li:nth-child(1) { animation-delay: 1.8s; }
+.main-nav li:nth-child(2) { animation-delay: 1.9s; }
+.main-nav li:nth-child(3) { animation-delay: 2.0s; }
+.main-nav li:nth-child(4) { animation-delay: 2.1s; }
+
 
 /* Стили для кнопок */
 .beautiful-button {
@@ -187,9 +212,10 @@ hr {
     font-size: clamp(2.1rem, 1.5rem + 3vw, 3rem);
     margin-bottom: 50px;
     position: relative;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both; /* NEW: Title focus animation */
 }
 
-.content-section h2::after {
+.content-section.visible h2::after {
     content: '';
     display: block;
     width: 80px;
@@ -197,7 +223,8 @@ hr {
     background: var(--primary-color);
     margin: 15px auto 0;
     border-radius: 2px;
-    animation: expandWidth 1s ease-in-out;
+    animation: expandWidth 1s ease-in-out 0.5s forwards; /* Modified: Added delay */
+    width: 0; /* NEW: Initial state */
 }
 
 
@@ -230,7 +257,26 @@ hr {
     margin: 0 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
     text-decoration: none;
+    position: relative; /* NEW: for shine effect */
+    overflow: hidden; /* NEW: for shine effect */
 }
+
+/* NEW: Shine effect on hover */
+.gallery .card-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    transform: skewX(-30deg);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+    transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.gallery .card-link:hover::after {
+    left: 150%;
+}
+
 
 .gallery-wrap:has(.card-link:hover) .card-link:not(:hover) {
     opacity: 0.4;
@@ -367,7 +413,7 @@ hr {
 }
 .quote:hover {
     transform: scale(1.03) !important;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3), 0 0 25px rgba(241, 196, 15, 0.3); /* NEW: Added glow */
     z-index: 10;
 }
 .quote blockquote {
@@ -474,7 +520,7 @@ hr {
 .timeline-img-opposite {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0); /* Modified: initial state */
     width: 140px;
     height: 140px;
     object-fit: cover;
@@ -482,7 +528,18 @@ hr {
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     border: 4px solid var(--secondary-color);
     z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* NEW: Pop-in animation */
 }
+
+/* NEW: Animate image when timeline item is visible */
+.visible .timeline-item .timeline-img-opposite {
+    transform: translateY(-50%) scale(1);
+}
+.visible .timeline-item:nth-child(1) .timeline-img-opposite { transition-delay: 0.3s; }
+.visible .timeline-item:nth-child(4) .timeline-img-opposite { transition-delay: 0.6s; }
+.visible .timeline-item:nth-child(7) .timeline-img-opposite { transition-delay: 0.9s; }
+
+
 .timeline-item:nth-child(odd) .timeline-img-opposite {
     left: 110%;
 }
@@ -527,9 +584,11 @@ hr {
     border-radius: 0.75rem; /* rounded-xl */
     transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
     border: none;
+    animation: button-pulse 3s infinite cubic-bezier(0.4, 0, 0.2, 1); /* NEW: Pulsing animation */
 }
 .start-pres-btn-reworked:hover {
     transform: scale(1.05);
+    animation-play-state: paused; /* NEW: Pause animation on hover */
 }
 .start-pres-btn-reworked:active {
     transform: scale(0.95);
@@ -880,7 +939,24 @@ hr {
 
 
 footer { text-align: center; padding: 25px; background: #111; color: #aaa; margin-top: 40px; font-size: 0.9rem; }
-#scrollToTopBtn { position: fixed; bottom: 30px; right: 30px; z-index: 999; display: none; }
+
+/* MODIFIED: Scroll to top button styles for animation */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+#scrollToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 
 .button { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(#e3cbff, #fcebfc); border: none; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0px 0px 0px 4px #b4a0ff41; cursor: pointer; transition-duration: 0.3s; overflow: hidden; position: relative; }
 .svgIcon { width: 12px; transition-duration: 0.3s; }
@@ -889,6 +965,29 @@ footer { text-align: center; padding: 25px; background: #111; color: #aaa; margi
 .button:hover .svgIcon { transition-duration: 0.3s; transform: translateY(-200%); }
 .button::before { position: absolute; bottom: -20px; content: "Back to Top"; color: #7a18e5; font-size: 0px; }
 .button:hover::before { font-size: 13px; opacity: 1; bottom: unset; transition-duration: 0.3s; }
+
+/* === NEW ANIMATIONS === */
+@keyframes pageFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes textReveal {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideInFromTop {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes text-focus-in {
+    0% { filter: blur(12px); opacity: 0; }
+    100% { filter: blur(0px); opacity: 1; }
+}
+@keyframes button-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 20px #18181b; }
+    50% { transform: scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 30px #2f2f35; }
+}
+
 
 /* Анимации */
 @keyframes fadeInDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
@@ -904,7 +1003,7 @@ footer { text-align: center; padding: 25px; background: #111; color: #aaa; margi
 
 /* Отключение анимаций для пользователей, предпочитающих их отсутствие */
 @media (prefers-reduced-motion: reduce) {
-  .gallery, .quote-column, .slide, .timeline-icon, .beautiful-button, .card-background-img, .hero {
+  .gallery, .quote-column, .slide, .timeline-icon, .beautiful-button, .card-background-img, .hero, body, .main-nav li, .content-section h2, .start-pres-btn-reworked {
     animation: none !important;
     transition: none !important;
   }
