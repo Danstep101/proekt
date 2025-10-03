@@ -826,8 +826,20 @@ hr {
     margin-bottom: 25px;
     line-height: 1.2;
 }
-.intro-grid { gap: 25px; }
-.intro-box { padding: 25px; font-size: clamp(1rem, 0.9rem + 0.5vw, 1.4rem); line-height: 1.6; }
+/* === CHANGED === */
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.intro-box {
+    padding: 20px;
+    font-size: clamp(0.95rem, 0.9rem + 0.5vw, 1.25rem);
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+/* === END CHANGED === */
 .text-slide p { font-size: clamp(1.2rem, 1rem + 1vw, 2rem); line-height: 1.6; }
 .quote-slide p { font-size: clamp(1.1rem, 0.9rem + 1vw, 1.8rem); margin-bottom: 2rem; }
 .quote-slide q { font-size: clamp(1rem, 0.8rem + 1vw, 1.6rem); font-style: italic; }
