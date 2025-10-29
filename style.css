@@ -1192,3 +1192,32 @@ footer { text-align: center; padding: 25px; background: #111; color: #aaa; margi
         padding: 6px 8px;
     }
 }
+
+/* === НОВЫЕ СТИЛИ ДЛЯ КНОПОК "ЧИТАТЬ" И "СЛУШАТЬ" === */
+
+/* Обертка для кнопок */
+.card-buttons {
+    display: flex; /* Ставим кнопки в ряд */
+    flex-wrap: wrap; /* Позволяем переноситься на новую строку, если не влезут */
+    gap: 10px; /* Расстояние между кнопками */
+    margin-top: 10px; /* Тот же отступ, что был у кнопки "Читать" */
+}
+
+/* Убираем верхний отступ у кнопок, когда они в обертке */
+.card-buttons .read-more-btn {
+    margin-top: 0;
+    flex-grow: 1; /* Кнопки будут растягиваться, занимая равное место */
+    text-align: center; /* Центрируем текст в кнопках */
+}
+
+/* Стиль для новой кнопки "Слушать" */
+.listen-btn {
+    background-color: var(--button-gradient-end); /* Другой цвет (взят из ваших переменных) */
+    color: white;
+}
+
+/* Эффект наведения для кнопки "Слушать" */
+.listen-btn:hover {
+    background-color: var(--button-hover-end) !important; /* !important, чтобы перебить hover у .read-more-btn */
+    transform: scale(1.05);
+}
