@@ -15,6 +15,14 @@
     --pres-nav-btn-hover-bg: #e6b800; /* Более темный при наведении */
 }
 
+/* NEW: Регистрация свойства для анимации градиента */
+@property --p {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+
 body {
     font-family: 'Merriweather', serif;
     margin: 0;
@@ -950,6 +958,112 @@ hr {
 }
 
 
+/* === НОВЫЕ СТИЛИ ДЛЯ СЛАЙДА АНКЕТИРОВАНИЯ (3 ДИАГРАММЫ) === */
+.survey-slide .slide-title {
+    font-size: clamp(1.8rem, 1.5rem + 2vw, 2.8rem); /* Меньший заголовок */
+    margin-bottom: 20px;
+}
+.survey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 20px; /* Уменьшил gap */
+    width: 100%;
+    align-items: stretch; /* Блоки будут одной высоты */
+}
+.survey-block {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px; /* Уменьшил padding */
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: left; /* Текст по левому краю */
+    display: flex; /* Для лучшего контроля */
+    flex-direction: column;
+}
+
+.survey-question-title {
+    color: var(--primary-color);
+    font-size: 1.2rem; /* Уменьшил */
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+.survey-data {
+    font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+    line-height: 1.5;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Текст будет занимать место, выравнивая блоки */
+}
+.survey-conclusion {
+    font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+    line-height: 1.5;
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 4px solid var(--primary-color);
+    margin-top: 15px;
+}
+
+/* Обертка для центрирования диаграммы */
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* Новая маленькая диаграмма */
+.pie-chart-small {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* Используем кастомное свойство --p для градиента */
+    background: conic-gradient(
+        var(--primary-color) var(--p, 0deg),
+        var(--secondary-color) var(--p, 0deg)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.pie-chart-small-percent {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Анимации для каждой диаграммы */
+.slide.active #pie-chart-43 {
+    animation: pie-anim-43 1.5s 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.slide.active #pie-chart-49 {
+    animation: pie-anim-49 1.5s 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.slide.active #pie-chart-37 {
+    animation: pie-anim-37 1.5s 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes pie-anim-43 {
+    from { --p: 0deg; }
+    to { --p: 154.8deg; } /* 43% */
+}
+@keyframes pie-anim-49 {
+    from { --p: 0deg; }
+    to { --p: 176.4deg; } /* 49% */
+}
+@keyframes pie-anim-37 {
+    from { --p: 0deg; }
+    to { --p: 133.2deg; } /* 37% */
+}
+/* ============================================= */
+
+
 footer { text-align: center; padding: 25px; background: #111; color: #aaa; margin-top: 40px; font-size: 0.9rem; }
 
 /* MODIFIED: Scroll to top button styles for animation */
@@ -1015,7 +1129,7 @@ footer { text-align: center; padding: 25px; background: #111; color: #aaa; margi
 
 /* Отключение анимаций для пользователей, предпочитающих их отсутствие */
 @media (prefers-reduced-motion: reduce) {
-  .gallery, .quote-column, .slide, .timeline-icon, .beautiful-button, .card-background-img, .hero, body, .main-nav li, .content-section h2, .start-pres-btn-reworked {
+  .gallery, .quote-column, .slide, .timeline-icon, .beautiful-button, .card-background-img, .hero, body, .main-nav li, .content-section h2, .start-pres-btn-reworked, .pie-chart-small {
     animation: none !important;
     transition: none !important;
   }
@@ -1026,6 +1140,10 @@ footer { text-align: center; padding: 25px; background: #111; color: #aaa; margi
     opacity: 1;
     transform: translateY(0);
   }
+  /* Устанавливаем конечное состояние диаграммы без анимации */
+  #pie-chart-43 { --p: 154.8deg; }
+  #pie-chart-49 { --p: 176.4deg; }
+  #pie-chart-37 { --p: 133.2deg; }
 }
 
 
@@ -1075,6 +1193,15 @@ footer { text-align: center; padding: 25px; background: #111; color: #aaa; margi
     .quote-column {
         animation: none; /* Отключаем анимацию на мобильных */
         width: 100%; /* Колонки на всю ширину */
+    }
+
+    /* Адаптивность для нового слайда */
+    .survey-grid {
+        grid-template-columns: 1fr; /* Колонки встанут друг под друга */
+        gap: 15px;
+    }
+    .survey-block {
+        height: auto; /* Убираем фикс. высоту на мобильных */
     }
 }
 
@@ -1191,6 +1318,22 @@ footer { text-align: center; padding: 25px; background: #111; color: #aaa; margi
     .table-slide th, .table-slide td {
         padding: 6px 8px;
     }
+
+    /* Адаптивность для нового слайда */
+    .survey-block {
+        padding: 15px;
+    }
+    .pie-chart-small {
+        width: 100px;
+        height: 100px;
+    }
+    .pie-chart-small-percent {
+        font-size: 1.3rem;
+    }
+    .survey-question-title {
+        font-size: 1.1rem;
+    }
+
 }
 
 /* === НОВЫЕ СТИЛИ ДЛЯ КНОПОК "ЧИТАТЬ" И "СЛУШАТЬ" === */
