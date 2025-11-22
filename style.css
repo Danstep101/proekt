@@ -310,7 +310,106 @@ hr {
     padding: 25px;
     position: relative;
     overflow: hidden;
+    /* Убедимся, что border не ломает размеры */
+    box-sizing: border-box;
 }
+
+/* === ИЗМЕНЕНИЯ: СТИЛИ ДЛЯ ВЫДЕЛЕННОЙ КАРТОЧКИ "МЦЫРИ" === */
+.gallery .highlight-special {
+    z-index: 5; /* Чуть выше остальных по умолчанию */
+}
+
+/* Золотая рамка и сильное свечение */
+.gallery .highlight-special .card {
+    border: 3px solid var(--primary-color); /* Золотая рамка */
+    box-shadow: 0 0 25px rgba(241, 196, 15, 0.6); /* Свечение */
+    transform: scale(1.05); /* Немного увеличена изначально */
+    animation: pulse-highlight 3s infinite ease-in-out; /* Пульсация */
+    /* Важно: не задаем background-color, чтобы не перекрыть картинку */
+}
+
+/* Бейджик "Тема проекта" */
+.gallery .highlight-special .card::before {
+    content: '★ Тема проекта';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    /* Сбрасываем свойства стандартного before, чтобы он не перекрыл контент */
+    width: auto;
+    height: auto;
+    bottom: auto;
+    left: auto;
+}
+
+/* А вот стандартный градиент для всех карточек (включая Мцыри) */
+/* Нам нужно, чтобы затемнение было отдельным псевдоэлементом, а бейдж - отдельным,
+   но так как ::before один, для бейджа лучше использовать другой способ или
+   вернуть градиент в ::before и добавить бейдж в HTML.
+   НО, чтобы не менять HTML карточки (кроме класса обертки), сделаем хитрость:
+   Оставим градиент в ::before (он общий для всех .card), а бейдж сделаем через ::after у самой карточки.
+*/
+
+/* СБРОС ПРЕДЫДУЩЕГО КОДА ДЛЯ БЕЙДЖА */
+.gallery .highlight-special .card::before {
+   /* Возвращаем стандартное поведение (градиент), перезаписывая мой ошибочный код выше */
+   content: '';
+   position: absolute;
+   top: 0; left: 0; right: 0; bottom: 0;
+   background: var(--card-gradient);
+   z-index: 1;
+   width: 100%;
+   height: 100%;
+   border-radius: 0;
+   box-shadow: none;
+   padding: 0;
+}
+
+/* Добавляем бейдж через ::after */
+.gallery .highlight-special .card::after {
+    content: '★ Тема проекта';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Анимация пульсации для выделенной карточки */
+@keyframes pulse-highlight {
+    0% { box-shadow: 0 0 25px rgba(241, 196, 15, 0.6); }
+    50% { box-shadow: 0 0 40px rgba(241, 196, 15, 0.9); }
+    100% { box-shadow: 0 0 25px rgba(241, 196, 15, 0.6); }
+}
+
+/* Корректировка поведения при наведении на галерею */
+.gallery-wrap:has(.card-link:hover) .card-link.highlight-special:not(:hover) {
+    opacity: 0.8; /* Более заметна, чем остальные */
+    filter: blur(1px); /* Меньше размытия */
+    transform: scale(1.0); /* Возвращается к нормальному размеру */
+}
+
+/* При наведении на саму выделенную карточку */
+.gallery .highlight-special:hover .card {
+    transform: scale(1.05) !important;
+    animation: none; /* Останавливаем пульсацию при наведении */
+    border-color: #fff; /* Белая рамка при наведении */
+    box-shadow: 0 0 50px rgba(241, 196, 15, 1);
+}
+/* === КОНЕЦ ИЗМЕНЕНИЙ ДЛЯ МЦЫРИ === */
 
 .card-background-img {
     position: absolute;
@@ -328,6 +427,7 @@ hr {
     transform: scale(1.1);
 }
 
+/* Стандартный градиент для всех карточек */
 .card::before {
     content: '';
     position: absolute;
