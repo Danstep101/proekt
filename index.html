@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Творчество и анализ произведений Михаила Лермонтова.">
+    <title>Творчество Михаила Лермонтова</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Михаил Юрьевич Лермонтов</h1>
+            <p>Великий русский поэт, прозаик, драматург</p>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><button class="beautiful-button nav-btn" data-target="#biography">Биография</button></li>
+            <li><button class="beautiful-button nav-btn" data-target="#works">Произведения</button></li>
+            <li><button class="beautiful-button nav-btn" data-target="#quotes">Цитаты</button></li>
+            <li><button class="beautiful-button nav-btn" data-target="#mtsyri-analysis">Анализ поэмы</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="biography" class="content-section">
+            <h2>Биография</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-birthday-cake"></i></div>
+                    <img src="https://ic.pics.livejournal.com/museum_tarhany/53882813/82175/82175_1000.jpg" alt="Лермонтов в детстве" class="timeline-img-opposite">
+                    <div class="timeline-content">
+                        <h3>1814</h3>
+                        <p>Рождение в Москве 3 (15) октября.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h3>1828–1830</h3>
+                        <p>Учёба в Московском университетском благородном пансионе.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                    <div class="timeline-content">
+                        <h3>1830–1832</h3>
+                        <p>Обучение в Московском университете.</p>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-chess-knight"></i></div>
+                    <img src="https://avatars.dzeninfra.ru/get-zen_doc/3986249/pub_60cfa4ce290f195640e5e0c7_60e6ad83b00d2b3001b0f022/scale_1200" alt="Лермонтов в Школе гвардейских подпрапорщиков" class="timeline-img-opposite">
+                    <div class="timeline-content">
+                        <h3>1832-1834</h3>
+                        <p>Поступление в Школу гвардейских подпрапорщиков.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-feather-alt"></i></div>
+                    <div class="timeline-content">
+                        <h3>1837</h3>
+                        <p>Стихотворение "Смерть поэта", первая ссылка на Кавказ.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-book-open"></i></div>
+                    <div class="timeline-content">
+                        <h3>1838-1840</h3>
+                        <p>Расцвет творчества: "Мцыри", "Демон", "Герой нашего времени".</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-mountain"></i></div>
+                     <img src="https://i.pinimg.com/736x/29/e3/3f/29e33fb1bc52d75bd0284bad237b5c34.jpg" alt="Лермонтов на Кавказе, автопортрет" class="timeline-img-opposite" id="lermontov-mature-img">
+                    <div class="timeline-content">
+                        <h3>1840</h3>
+                        <p>Вторая ссылка на Кавказ за дуэль.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-cross"></i></div>
+                    <div class="timeline-content">
+                        <h3>1841</h3>
+                        <p>Трагическая гибель на дуэли в Пятигорске.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="works" class="content-section">
+            <h2>Произведения</h2>
+            <div class="gallery-wrap">
+                <div class="gallery">
+                    <div class="card-link">
+                        <div class="card">
+                            <img src="https://cdn.azbooka.ru/cv/w1100/5061fd29-00b3-4776-b247-35382c535628.jpg" alt="Обложка романа 'Герой нашего времени'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Герой нашего времени</h3>
+                                <p>Роман о Печорине, отражающий романтизм и критику общества.</p>
+                                <div class="card-buttons">
+                                    <a href="https://ilibrary.ru/text/12/p.1/index.html?ysclid=mg0wyj83k4538941497" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://akniga.org/lermontov-mihail-geroy-nashego-vremeni-3?ysclid=mhd10mmawu853230651" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Герой нашего времени">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                             <img src="https://s1.livelib.ru/boocover/1012520174/200x305/c940/Mihail_Lermontov__Demon.jpg" alt="Обложка поэмы 'Демон'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Демон</h3>
+                                <p>Поэма о падшем ангеле и любви.</p>
+                                <div class="card-buttons">
+                                    <a href="https://www.culture.ru/poems/36747/demon?ysclid=mg0wwkuuiy701191811" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://akniga.org/lermontov-mihail-demon?ysclid=mhd0zvnvyh757497287" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Демон">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-link highlight-special">
+                        <div class="card">
+                            <img src="https://imo02.my-shop.ru/products355/3549969/cover.jpg/500-0" alt="Обложка поэмы 'Мцыри'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Мцыри</h3>
+                                <p>Поэма о беглеце-монахе на Кавказе.</p>
+                                <div class="card-buttons">
+                                    <a href="https://ilibrary.ru/text/991/p.1/index.html?ysclid=mg0x5s0y4u44305900" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://akniga.org/lermontov-mihail-mcyri-8?ysclid=mhd0z9k7zu491809837" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Мцыри">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                            <img src="https://all-the-books.ru/upload/resize_cache/iblock/ed9/420_649_1e9b8336d01043882fbc6052ef3deaeaa/borodino.jpg" alt="Обложка стихотворения 'Бородино'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Бородино</h3>
+                                <p>Стихотворение о Бородинской битве.</p>
+                                <div class="card-buttons">
+                                    <a href="https://www.culture.ru/poems/36608/borodino?ysclid=mg0wveemuk755610277" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://deti-online.com/stihi/lermontov/borodino/?ysclid=mhd0wyc23g342203717" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Бородино">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtkp2kLk55URJkYjChkT2KOwyzTDqwAHLh4w&s" alt="Обложка драмы 'Маскарад'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Маскарад</h3>
+                                <p>Драма о ревности и нравах светского общества.</p>
+                                <div class="card-buttons">
+                                    <a href="https://ilibrary.ru/text/1247/p.1/index.html?ysclid=mg0x4gjsu1433426676" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://akniga.org/lermontov-mihail-maskarad-1?ysclid=mhd0ydosfp38832031" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Маскарад">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                            <img src="https://cdn1.ozone.ru/multimedia/1011485492.jpg" alt="Иллюстрация к стихотворению 'Парус'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Парус</h3>
+                                <p>Символ одиночества и мятежного духа.</p>
+                                <div class="card-buttons">
+                                    <a href="https://www.culture.ru/poems/36610/parus?ysclid=mh7q6ef7mw693611867" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://audioskazki-online.ru/podborki/raznoe/parus?ysclid=mhc3y3mv7m225275982" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Парус">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                            <img src="https://main-cdn.sbermegamarket.ru/big1/hlr-system/1688680221/100026058571b0.jpg" alt="Иллюстрация к стихотворению 'Смерть Поэта'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Смерть Поэта</h3>
+                                <p>Гневный отклик на гибель А.С. Пушкина.</p>
+                                <div class="card-buttons">
+                                    <a href="https://www.culture.ru/poems/36607/smert-poeta?ysclid=mh7q7n3kx78482261" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://audioskazki-online.ru/podborki/raznoe/smert-poeta?ysclid=mhc3yyjibg184683375" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Смерть Поэта">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                            <img src="https://cdn.litres.ru/pub/c/cover_415/300862.webp" alt="Иллюстрация к стихотворению 'Пророк'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Пророк</h3>
+                                <p>О трагической судьбе поэта в обществе.</p>
+                                <div class="card-buttons">
+                                    <a href="https://www.culture.ru/poems/36609/prorok?ysclid=mh7q8cwjg5565060202" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://audioskazki-online.ru/podborki/raznoe/prorok" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Пророк">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                            <img src="https://imo10.labirint.ru/books/1020310/cover.jpg/484-0" alt="Иллюстрация к стихотворению 'Выхожу один я на дорогу'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Выхожу один я на дорогу</h3>
+                                <p>Философские раздумья о жизни и смерти.</p>
+                                <div class="card-buttons">
+                                    <a href="https://www.culture.ru/poems/37203/vykhozhu-odin-ya-na-dorogu?ysclid=mh7q8zzl4z753290912" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://rutube.ru/video/10f32eb16f426541f8049a2fba9ec735/?ysclid=mhc41eis9x605670196" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Выхожу один я на дорогу">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                            <img src="https://fantlab.ru/images/editions/big/252908" alt="Обложка сборника со стихотворением 'Родина'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Родина</h3>
+                                <p>Стихотворение о "странной" любви к отчизне.</p>
+                                <div class="card-buttons">
+                                    <a href="https://www.culture.ru/poems/37139/rodina?ysclid=mh7q9pmdw7707518040" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://audioskazki-online.ru/podborki/raznoe/rodina?ysclid=mhc426q3km870969480" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Родина">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link">
+                        <div class="card">
+                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcScAqJrZvvY-MIoalg65tbdbAk2N_WDIXEw&s" alt="Иллюстрация к стихотворению 'Три пальмы'" class="card-background-img">
+                            <div class="card-content">
+                                <h3>Три пальмы</h3>
+                                <p>Восточная легенда о ропоте и его последствиях.</p>
+                                <div class="card-buttons">
+                                    <a href="https://ilibrary.ru/text/1037/p.1/index.html" target="_blank" class="read-more-btn">Читать</a>
+                                    <a href="https://audioskazki-online.ru/podborki/raznoe/tri-palmy?ysclid=mhd118h7u739577687" target="_blank" class="read-more-btn listen-btn" aria-label="Слушать Три пальмы">Слушать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="quotes" class="content-section">
+            <h2>Цитаты</h2>
+            <div class="multi-column-quotes-container">
+                <div class="quote-column">
+                    <figure class="quote">
+                        <blockquote><p>И скучно и грустно, и некому руку подать<br>В минуту душевной невзгоды...</p></blockquote>
+                        <figcaption>- <cite>Из стихотворения «И скучно и грустно»</cite></figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote><p>Всё это было бы смешно, когда бы не было так грустно.</p></blockquote>
+                        <figcaption>- <cite>Из драмы «Маскарад»</cite></figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote><p>Нет, я не Байрон, я другой, <br>Еще неведомый избранник, <br>Как он, гонимый миром странник, <br>Но только с русскою душой.</p></blockquote>
+                        <figcaption>- <cite>Из стихотворения «Нет, я не Байрон, я другой...»</cite></figcaption>
+                    </figure>
+                </div>
+                <div class="quote-column">
+                    <figure class="quote">
+                        <blockquote><p>Выхожу один я на дорогу;<br>Сквозь туман кремнистый путь блестит...</p></blockquote>
+                        <figcaption>- <cite>Из стихотворения «Выхожу один я на дорогу»</cite></figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote><p>Я был скромен — меня обвиняли в лукавстве: я стал скрытен.</p></blockquote>
+                        <figcaption>- <cite>Из романа «Герой нашего времени»</cite></figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote><p>Погиб поэт! — невольник чести — <br>Пал, оклеветанный молвой, <br>С свинцом в груди и жаждой мести, <br>Поникнув гордой головой!..</p></blockquote>
+                        <figcaption>- <cite>Из стихотворения «Смерть поэта»</cite></figcaption>
+                    </figure>
+                </div>
+                <div class="quote-column">
+                    <figure class="quote">
+                        <blockquote><p>Люблю отчизну я, но странною любовью!<br>Не победит ее рассудок мой.</p></blockquote>
+                        <figcaption>- <cite>Из стихотворения «Родина»</cite></figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote><p>Из двух друзей всегда один раб другого.</p></blockquote>
+                        <figcaption>- <cite>Из романа «Герой нашего времени»</cite></figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote><p>Клянусь я первым днем творенья, <br>Клянусь его последним днем, <br>Клянусь позором преступленья <br>И вечной правды торжеством.</p></blockquote>
+                        <figcaption>- <cite>Из поэмы «Демон»</cite></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="mtsyri-analysis" class="content-section">
+            <h2>Анализ поэмы «Мцыри»</h2>
+            <div class="visually-hidden" aria-live="polite" id="slide-announcer"></div>
+            <div id="presentation-launch-pad">
+                <div class="start-presentation-screen">
+                    <button id="start-pres-btn" class="start-pres-btn-reworked">
+                        <span class="start-pres-btn-reworked-gradient"></span>
+                        <span class="start-pres-btn-reworked-content">
+                            <span>Начать презентацию</span>
+                            <svg class="w-6 h-6" data-slot="icon" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" fill-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="presentation-layout-container">
+                    <button class="pres-nav-btn prev" aria-label="Предыдущий слайд">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+
+                    <div class="info-drum">
+                        <div class="drum-item" style="--i:0;"><i class="fas fa-bible"></i></div>
+                        <div class="drum-item" style="--i:1;"><i class="fas fa-mountain"></i></div>
+                        <div class="drum-item" style="--i:2;"><i class="fas fa-feather-alt"></i></div>
+                        <div class="drum-item" style="--i:3;"><i class="fas fa-book-open"></i></div>
+                        <div class="drum-item" style="--i:4;"><i class="fas fa-cross"></i></div>
+                        <div class="drum-item" style="--i:5;"><i class="fas fa-question"></i></div>
+                    </div>
+
+                    <div class="presentation-container">
+                        <button id="fullscreen-btn" title="Полноэкранный режим" aria-label="Переключить полноэкранный режим">
+                            <i class="fas fa-expand icon-expand"></i>
+                            <i class="fas fa-compress icon-compress"></i>
+                        </button>
+
+                        <div id="fullscreen-hint" class="fullscreen-hint">
+                            <p>Нажмите сюда для лучшего просмотра!</p>
+                            <button id="close-hint-btn" class="close-hint-btn" aria-label="Закрыть подсказку">&times;</button>
+                        </div>
+
+                        <div class="presentation-background"></div>
+
+                        <div class="slide active" data-slide="1" tabindex="-1">
+                            <div class="slide-content title-slide">
+                                <h2 class="pres-title">Заимствования в поэме <span style="white-space: nowrap;">М.Ю. Лермонтова</span> "Мцыри"</h2>
+                                <div class="pres-authors">
+                                    <p><strong>Авторы проекта:</strong> Степанов Данил Андреевич, Дягилев Тимофей Владимирович, Потапов Иван Федорович, Громов Ярослав Владиславович, ученики 9 «Г» класса</p>
+                                    <p><strong>Руководитель проекта:</strong> Анастасия Александровна, учитель русского языка и литературы</p>
+                                </div>
+                                <div class="pres-footer">
+                                    <p>г. Киселёвск, 2025 учебный год</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="2" tabindex="-1">
+                            <div class="slide-content intro-slide">
+                                <h3 class="slide-title">Введение</h3>
+                                <div class="intro-grid">
+                                    <div class="intro-box"><strong>Актуальность:</strong> Глубокий анализ заимствований в поэме «Мцыри» позволяет понять, как М.Ю. Лермонтов, опираясь на мировую культурную традицию, создавал уникальный художественный мир и неповторимый образ главного героя.</div>
+                                    <div class="intro-box"><strong>Проблема:</strong> Школьники часто воспринимают заимствования лишь как отдельные элементы и не понимают, как они синтезируются в единое целое.</div>
+                                    <div class="intro-box"><strong>Цель:</strong> Исследование и анализ заимствований в поэме "Мцыри", определение их роли в создании художественного образа.</div>
+                                    <div class="intro-box"><strong>Гипотеза:</strong> М.Ю. Лермонтов не просто копировал известные сюжеты и образы, а творчески переосмыслял их, создавая новаторское произведение.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="3" tabindex="-1">
+                            <div class="slide-content survey-slide">
+                                <h3 class="slide-title">Результаты анкетирования</h3>
+                                <div class="survey-grid">
+
+                                    <div class="survey-block">
+                                        <h4 class="survey-question-title">📚 Уровень знания «Мцыри»</h4>
+                                        <div class="chart-wrapper">
+                                            <div class="pie-chart-small" id="pie-chart-43" role="img" aria-label="Круговая диаграмма: 43%">
+                                                <span class="pie-chart-small-percent">43%</span>
+                                            </div>
+                                        </div>
+                                        <p class="survey-data"><b>43%</b> опрашиваемых отметили, что знакомы с текстом только по урокам литературы.</p>
+                                        <p class="survey-conclusion"><b>Вывод:</b> Это свидетельствует о том, что произведение известно школьникам в основном на уровне школьной программы.</p>
+                                    </div>
+
+                                    <div class="survey-block">
+                                        <h4 class="survey-question-title">❓ Вопрос 4: Источники</h4>
+                                        <div class="chart-wrapper">
+                                            <div class="pie-chart-small" id="pie-chart-49" role="img" aria-label="Круговая диаграмма: 49%">
+                                                <span class="pie-chart-small-percent">49%</span>
+                                            </div>
+                                        </div>
+                                        <p class="survey-data">Большинство опрашиваемых (<b>49%</b>) ответили, что не слышали о литературных/фольклорных источниках.</p>
+                                        <p class="survey-conclusion"><b>Вывод:</b> Следовательно, большинство не знает о них.</p>
+                                    </div>
+
+                                    <div class="survey-block">
+                                        <h4 class="survey-question-title">🎭 Вопрос 6: Яркий эпизод</h4>
+                                        <div class="chart-wrapper">
+                                            <div class="pie-chart-small" id="pie-chart-37" role="img" aria-label="Круговая диаграмма: 37%">
+                                                <span class="pie-chart-small-percent">37%</span>
+                                            </div>
+                                        </div>
+                                        <p class="survey-data">У <b>37%</b> опрошенных не поменялось восприятие, для них важен итоговый результат.</p>
+                                        <p class="survey-data">Также у <b>6%</b> изменилось восприятие в худшую сторону.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="4" tabindex="-1">
+                            <div class="slide-content text-slide">
+                                <h3 class="slide-title">Теоретический анализ. Три мира поэмы «Мцыри»</h3>
+                                <p>Лермонтов активно использовал мотивы и образы из трёх ключевых источников: <strong>Библии, кавказского фольклора</strong> и традиций <strong>европейского и русского романтизма.</strong></p>
+                                <p class="highlight">Поэт творчески перерабатывал «чужой» материал, наполняя его новым, глубоко личным и оригинальным содержанием.</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="5" tabindex="-1">
+                            <div class="slide-content quote-slide">
+                                <i class="fas fa-bible slide-icon"></i>
+                                <h3 class="slide-title">Мир Библии</h3>
+                                <p>Центральный сюжет — <strong>притча о блудном сыне</strong>, которую Лермонтов «перевернул»: Мцыри бежит из «тюрьмы» на родину, в свой потерянный «рай». Образ родины для Мцыри — это «земля обетованная».</p>
+                                <q>"Я знал одной лишь думы власть, / Одну — но пламенную страсть: / Она, как червь, во мне жила, / Изгрызла душу и сожгла..."</q>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="6" tabindex="-1">
+                            <div class="slide-content quote-slide">
+                                <i class="fas fa-mountain slide-icon"></i>
+                                <h3 class="slide-title">Мир Кавказа</h3>
+                                <p><strong>Образ героя-горца:</strong> Мцыри воплощает романтический идеал, для которого воля дороже жизни. <strong>Сцена боя с барсом</strong> имеет параллели в грузинском эпосе «Витязь в тигровой шкуре».</p>
+                                <q>"И я был страшен в этот миг; / Как барс пустынный, зол и дик, / Я пламенел, визжал, как он; / Как будто сам я был рожден / В семействе барсов и волков..."</q>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="7" tabindex="-1">
+                            <div class="slide-content quote-slide">
+                                <i class="fas fa-feather-alt slide-icon"></i>
+                                <h3 class="slide-title">Мир Романтизма</h3>
+                                <p>Мцыри — <strong>классический романтический герой</strong>, противопоставленный обществу. Поэма написана в форме <strong>исповеди</strong>, а пейзаж служит <strong>зеркалом души</strong> героя.</p>
+                                <q>"Я видел горные хребты, / Причудливые, как мечты... / ...Я променял бы, если б мог, / И рай и вечность..."</q>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="8" tabindex="-1">
+                            <div class="slide-content product-slide">
+                                <h3 class="slide-title">Практическая часть: Продукт проекта</h3>
+                                <div class="product-content">
+                                    <div class="product-text">
+                                        <p>В качестве продукта мы разработали <strong>обучающий сайт о творчестве М. Ю. Лермонтов</strong>.</p>
+                                        <p><strong>Цель продукта:</strong> Помочь учащимся 8-9 классов лучше понять глубину и многослойность поэмы.</p>
+                                    </div>
+                                    <div class="product-icon">
+                                        <i class="fas fa-book-open"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="9" tabindex="-1">
+                            <div class="slide-content text-slide">
+                                <h3 class="slide-title">Заключение</h3>
+                                <p><strong>Вывод по гипотезе:</strong> Наша гипотеза <strong>полностью подтвердилась</strong>. Лермонтов действительно творчески переосмыслял заимствования, создавая новаторское произведение.</p>
+                                <p class="highlight"><strong>Главный результат:</strong> Заимствованные элементы стали строительным материалом для выражения главной идеи поэмы — трагического величия человека в его вечном стремлении к свободе.</p>
+                            </div>
+                        </div>
+
+                        <div class="slide" data-slide="10" tabindex="-1">
+                            <div class="slide-content text-slide">
+                                <h3 class="slide-title">Спасибо за внимание!</h3>
+                                <p>Готовы ответить на ваши вопросы.</p>
+                                <i class="fas fa-question-circle slide-icon-large"></i>
+                            </div>
+                        </div>
+                        <div class="slide-counter"></div>
+                    </div>
+
+                    <button class="pres-nav-btn next" aria-label="Следующий слайд">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Творчество Лермонтова</p>
+        <p>Сделано Степановым Данилом для проекта 9 класса</p>
+    </footer>
+
+    <button id="scrollToTopBtn" class="button">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+            <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
